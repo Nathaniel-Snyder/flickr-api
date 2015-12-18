@@ -1,0 +1,16 @@
+
+<h1>Flickr API</h1>
+
+<%= form_tag '/', method: :get do %>
+	<%= label_tag :user_id, "User id" %>
+	<%= text_field_tag :user_id %>
+	<%= submit_tag "Submit ID" %>
+<% end %>
+
+<% if @user_id %>
+
+<% photo_urls(@user_id)[0..15].each do |photo| %>
+	<p><%= image_tag photo %></p>
+<% end %>
+
+<% end %>
